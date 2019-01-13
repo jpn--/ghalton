@@ -24,8 +24,14 @@ install:
   # Replace dep1 dep2 ... with your dependencies
   - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION conda-build anaconda-client numpy conda-verify
   - source activate test-environment
+  - mkdir ~/conda-bld
+  - conda config --set anaconda_upload no
+  - export CONDA_BLD_PATH=~/conda-bld
   - conda build conda-recipe
-  - conda install ghalton --use-local
 
 script:
   - pytest --pyargs ghalton
+
+after_success:
+  - bash conda_upload.sh
+
