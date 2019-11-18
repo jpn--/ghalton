@@ -1,7 +1,7 @@
 {% set name = "ghalton" %}
 {% set version = "0.6.2" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "94d9dbc2c2316bee292f8911b3cf1acfc5942c3b895bfd226ce171a35f73ba02" %}
+{% set hash_value = "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef" %}
 
 package:
   name: '{{ name|lower }}'
@@ -9,7 +9,7 @@ package:
 
 source:
   fn: '{{ name }}-{{ version }}.tar.gz'
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://github.com/jpn--/{{ name }}/archive/{{ version }}.tar.gz
   '{{ hash_type }}': '{{ hash_value }}'
 
 build:
