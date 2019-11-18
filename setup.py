@@ -8,7 +8,7 @@ ghalton_module = Extension("ghalton._ghalton_wrapper",
 #                            extra_link_args=['-stdlib=libstdc++']
                           )
 
-version = "0.6.2"
+version = "0.6.3"
 
 # read the contents of README file
 from os import path
