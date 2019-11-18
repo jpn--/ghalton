@@ -1,9 +1,20 @@
 #!/usr/bin/env python
 from setuptools import setup, find_packages, Extension
 
-ghalton_module = Extension("ghalton._ghalton_wrapper", sources=["src/Halton_wrap.cxx", "src/Halton.cpp"])
+ghalton_module = Extension("ghalton._ghalton_wrapper",
+                           language = "c++",
+                           sources=["src/Halton_wrap.cxx", "src/Halton.cpp"],
+#                            extra_compile_args=["-stdlib=libstdc++"],
+#                            extra_link_args=['-stdlib=libstdc++']
+                          )
 
-version = "0.6.1"
+version = "0.6.2"
+
+# read the contents of README file
+from os import path
+import codecs
+this_directory = path.abspath(path.dirname(__file__))
+long_description = codecs.open(path.join(this_directory, 'README.md'), 'r', 'utf-8').read()
 
 setup (name = "ghalton",
        version = version,
@@ -12,7 +23,8 @@ setup (name = "ghalton",
        author_email = "f.derainville@gmail.com",
        license = "LICENSE.txt",
        description = "Generalized Halton number generator",
-       long_description = open("README.md",encoding="utf-8").read(),
+       long_description = long_description,
+       long_description_content_type="text/markdown",
        url='https://github.com/fmder/ghalton',
        download_url = "https://github.com/fmder/ghalton/tarball/master#egg=ghalton-%s" % version,
        classifiers=[
