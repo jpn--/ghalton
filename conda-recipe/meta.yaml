@@ -18,14 +18,20 @@ build:
 
 requirements:
   build:
-    - python {{ python }}
-    - setuptools
+    - {{ compiler('cxx') }}
+  host:
+    - python
+    - pip
   run:
-    - python {{ python }}
+    - python
 
 test:
   imports:
     - ghalton
+  commands:
+    - pytest tests.py
+  requires:
+    - pytest
 
 about:
   home: https://github.com/fmder/ghalton
