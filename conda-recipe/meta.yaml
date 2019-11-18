@@ -29,8 +29,8 @@ requirements:
 test:
   imports:
     - ghalton
-  #commands:
-  #  - py.test --pyargs ghalton
+  commands:
+    - py.test --pyargs ghalton
   requires:
     - pytest
 
