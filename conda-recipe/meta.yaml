@@ -1,7 +1,7 @@
 {% set name = "ghalton" %}
 {% set version = "0.6.3" %}
 {% set hash_type = "sha256" %}
-{% set hash_value = "deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef" %}
+{% set hash_value = "edce7b5cecad7fe94a31200750e6a0d375617917b8dbac9aac9cfe6ca52daa79" %}
 
 package:
   name: '{{ name|lower }}'
