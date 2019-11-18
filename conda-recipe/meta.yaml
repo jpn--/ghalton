@@ -1,5 +1,5 @@
 {% set name = "ghalton" %}
-{% set version = "0.6.1" %}
+{% set version = "0.6.2" %}
 {% set hash_type = "sha256" %}
 {% set hash_value = "94d9dbc2c2316bee292f8911b3cf1acfc5942c3b895bfd226ce171a35f73ba02" %}
 
