@@ -8,9 +8,10 @@ package:
   version: '{{ version }}'
 
 source:
-  fn: '{{ name }}-{{ version }}.tar.gz'
-  url: https://github.com/jpn--/{{ name }}/archive/{{ version }}.tar.gz
-  '{{ hash_type }}': '{{ hash_value }}'
+  #fn: '{{ name }}-{{ version }}.tar.gz'
+  #url: https://github.com/jpn--/{{ name }}/archive/{{ version }}.tar.gz
+  #'{{ hash_type }}': '{{ hash_value }}'
+  path: ../
 
 build:
   number: 0
@@ -29,7 +30,7 @@ test:
   imports:
     - ghalton
   commands:
-    - pytest tests.py
+    - py.test --pyargs ghalton
   requires:
     - pytest
 
